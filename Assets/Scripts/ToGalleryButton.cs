@@ -4,14 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class ToGalleryButton : MonoBehaviour
 {
-    void Start()
+    [SerializeField] SceneTransition _transition;
+
+    private void Start()
     {
         var button = this.GetComponent<Button>();
         button.onClick.AddListener(onButtonClick);
     }
-
     private void onButtonClick()
     {
-        SceneManager.LoadScene("GalleryScene");
+        _transition.LoadScene("GalleryScene");
     }
 }

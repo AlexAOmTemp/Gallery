@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 public class CloseButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] SceneTransition _transition;
+    private void Start()
     {
         var button = this.GetComponent<Button>();
         button.onClick.AddListener(onButtonClick);
@@ -14,6 +12,6 @@ public class CloseButton : MonoBehaviour
 
     private void onButtonClick()
     {
-        SceneManager.LoadScene("GalleryScene");
+        _transition.LoadScene("GalleryScene");
     }
 }

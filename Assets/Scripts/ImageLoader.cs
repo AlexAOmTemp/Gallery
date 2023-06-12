@@ -1,16 +1,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 
 public class ImageLoader : MonoBehaviour
 {
     public delegate void ImageLoaded(Sprite image);
     public event ImageLoaded ImageIsLoaded;
+
     public void LoadImage(string url, string newName)
     {
         StartCoroutine(getTexture(url, newName));
     }
+
     private IEnumerator getTexture(string url, string newName)
     {
         UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(url);

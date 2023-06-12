@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ViewChoosenImage : MonoBehaviour
 {
-    void Awake()
+    private void Awake()
     {
         var choosenImage = GameObject.Find("ChoosenImage");
         if (choosenImage == null)

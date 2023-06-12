@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class GalleryFiller : MonoBehaviour
 {
@@ -12,44 +10,47 @@ public class GalleryFiller : MonoBehaviour
     [SerializeField] private ScrollRect _scroll;
 
     private GridLayoutGroup _layout;
-    private const int itemAmount = 66;
-    private const string _url = "http://data.ikppbb.com/test-task-unity-data/pics/";
-    private List<GameObject> contentItems = new List<GameObject>();
-    void Awake()
-    {
-        _scroll.onValueChanged.AddListener((Vector2 val) => ScrollbarCallback(val));
-        _imageLoader.ImageIsLoaded += onImageLoaded;
-        for (int i = 0; i< 8; i++)
-            addNewItem();
-       
+    private const int _ItemAmount = 66;
+    private const string _Url = "http://data.ikppbb.com/test-task-unity-data/pics/";
+    private List<GameObject> _contentItems = new List<GameObject>();
 
-    }
-    void ScrollbarCallback(Vector2 value)
+    private void Awake()
     {
-        
+        _scroll.onValueChanged.AddListener((Vector2 val) => scrollbarCallback(val));
+        _imageLoader.ImageIsLoaded += onImageLoaded;
+
+        float width = Display.main.systemWidth;
+        float height = Display.main.systemHeight;
+        float proportion = height / width;
+        int baseItemsCount = 8;
+        if (proportion > 1.9)
+            baseItemsCount = 10;
+        for (int i = 0; i< baseItemsCount; i++)
+            addNewItem();
+    }
+    private void scrollbarCallback(Vector2 value)
+    {
         if (_scroll.verticalNormalizedPosition <= 0.005f)
             for (int i = 0; i < 2; i++)
                 addNewItem();
     }
-
     private void onImageLoaded(Sprite sprite)
     {
         int index = int.Parse(sprite.name);
-        contentItems[index].GetComponent<Image>().sprite = sprite;
-        contentItems[index].GetComponent<ImageViewButton>().SpriteLoaded();
+        _contentItems[index].GetComponent<Image>().sprite = sprite;
+        _contentItems[index].GetComponent<ImageViewButton>().SpriteLoaded();
     }
-
     private string getCurrentImageName(int number)
     {
-        return _url + number.ToString() + ".jpg";
+        return _Url + number.ToString() + ".jpg";
     }
     private void addNewItem()
     {
-        if (contentItems.Count < itemAmount)
+        if (_contentItems.Count < _ItemAmount)
         {
             var item = Instantiate(_contentItemPrefab, _contentContainer.transform);
-            _imageLoader.LoadImage(getCurrentImageName(contentItems.Count+1), contentItems.Count.ToString());
-            contentItems.Add(item);
+            _imageLoader.LoadImage(getCurrentImageName(_contentItems.Count+1), _contentItems.Count.ToString());
+            _contentItems.Add(item);
         }
     }
 }
