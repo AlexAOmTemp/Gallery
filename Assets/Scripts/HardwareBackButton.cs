@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HardwareBackButton : MonoBehaviour
 {
@@ -10,19 +9,7 @@ public class HardwareBackButton : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                var scene = SceneManager.GetActiveScene();
-                if (scene.name == "ViewScene")
-                {
-                    _transition.LoadScene("GalleryScene");
-                }
-                else if (scene.name == "GalleryScene")
-                {
-                    _transition.LoadScene("MenuScene");
-                }
-                else // MenuScene
-                {
-                    Application.Quit();
-                }
+                _transition.BackPressed();
             }
         }
     }

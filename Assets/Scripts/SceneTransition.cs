@@ -10,23 +10,50 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private TMP_Text _loadingPercentage;
     [SerializeField] private Image _loadingProgressBar;
 
+    static private string _lastSceneName;
+    
     private const float _DesirableLoadigTime = 3.0f;
     private const int _DesirableLoadigIterations = 100;
 
     private float _iterationTime = _DesirableLoadigTime / _DesirableLoadigIterations;
     private bool _isLoading = false;
+
+    public void BackPressed()
+    {
+        if (_lastSceneName == "ViewScene")
+        {
+            SceneManager.UnloadSceneAsync("ViewScene");
+            _lastSceneName = "GalleryScene";
+        }
+        else if (_lastSceneName == "GalleryScene")
+        {
+            LoadScene("MenuScene");
+        }
+        else // MenuScene
+        {
+            Application.Quit();
+        }
+    }
     public void LoadScene(string sceneName)
     {
         if (_isLoading == false)
         {
-            StartCoroutine(loadSceneAsync(sceneName));
+            _lastSceneName = sceneName;
+            Debug.Log($"Last saved scene {_lastSceneName}");
+            bool additive = false;
+            if (sceneName == "ViewScene")
+                additive = true;
+            StartCoroutine(loadSceneAsync(sceneName, additive));
             _isLoading = true;
         }
     }
-
-    private IEnumerator loadSceneAsync(string sceneName)
+    private IEnumerator loadSceneAsync(string sceneName, bool additive)
     {
-        AsyncOperation loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation loadingSceneOperation;
+        if (additive == true)
+            loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        else
+            loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
         loadingSceneOperation.allowSceneActivation = false;
         _loadingScreen.SetActive(true);
 
@@ -39,6 +66,12 @@ public class SceneTransition : MonoBehaviour
             yield return new WaitForSeconds(_iterationTime);
         }
         loadingSceneOperation.allowSceneActivation = true;
+        StartCoroutine(HideLoadingScreenWithDelay());
         _isLoading = false;
+    }
+    IEnumerator HideLoadingScreenWithDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _loadingScreen.SetActive(false);
     }
 }

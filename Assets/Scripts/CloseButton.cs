@@ -9,9 +9,8 @@ public class CloseButton : MonoBehaviour
         var button = this.GetComponent<Button>();
         button.onClick.AddListener(onButtonClick);
     }
-
     private void onButtonClick()
     {
-        _transition.LoadScene("GalleryScene");
+        _transition.BackPressed(); 
     }
 }
