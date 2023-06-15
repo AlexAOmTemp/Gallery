@@ -841,68 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd70c140010c3e45839305462520d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1751118039
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 229456580208516721, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: _transition
-      value: 
-      objectReference: {fileID: 1694091845}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 468.13538
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 232.93033
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -27.674618
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435573, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592552977860435575, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-      propertyPath: m_Name
-      value: ScreenRotator
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 229456580208516721, guid: 8f184379be3e37840956a8de4b800167, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 8f184379be3e37840956a8de4b800167, type: 3}
 --- !u!1 &2125284616
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +901,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4783609925563762316, guid: 08e821a6c17d9804e96954398f55f697, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4783609925563762316, guid: 08e821a6c17d9804e96954398f55f697, type: 3}
       propertyPath: m_LocalPosition.x
