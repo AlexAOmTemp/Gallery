@@ -1,10 +1,10 @@
 # Скриншоты:
 
-![Стартовое меню](https://github.com/AlexAOmTemp/Gallery/blob/main/ScreenShots/gallery_menu.jpg)
+![Стартовое меню](https://drive.google.com/file/d/1BGpM5DV4Go4Cb6MqiJGJgMP2OQV5XbQp/view?usp=sharing)
 
-![Галлерея](https://github.com/AlexAOmTemp/Gallery/blob/main/ScreenShots/gallery_gallery.jpg)
+![Галлерея](https://drive.google.com/file/d/1Ten-oBJBLiQFqErT97sQfcvDbPH5M6xS/view?usp=sharing)
 
-![Меню просмотра](https://drive.google.com/file/d/1AIddqhZVDGgX3whpyqTnQNoRqb1RYXXF/view?usp=sharing)
+![Меню просмотра](https://github.com/AlexAOmTemp/Gallery/blob/main/ScreenShots/gallery%20view.jpg)
 
 
 # apk файл: 
